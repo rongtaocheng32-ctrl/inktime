@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="InkTime：将英文短句生成手写 SVG 动画">
+  <title>InkTime · 字迹时光</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <section class="intro">
+      <p class="kicker">INKTIME / HANDWRITING STUDIO</p>
+      <h1>让一句话<br>慢慢写出来。</h1>
+      <p class="lead">输入英文短句，调整颜色、速度和字号，生成可重播、可导出的 SVG 手写动画。</p>
+    </section>
+
+    <section class="studio" aria-label="手写动画工作台">
+      <form id="controls">
+        <label class="wide">
+          <span>文字内容</span>
+          <textarea id="text-input" maxlength="70" rows="3">Make today visible.</textarea>
+          <small>当前内置笔迹支持英文字母、数字和常用英文标点。</small>
+        </label>
+        <label>
+          <span>墨水颜色</span>
+          <input id="color-input" type="color" value="#ef5b3f">
+        </label>
+        <label>
+          <span>字号 <output id="size-output">54</output></span>
+          <input id="size-input" type="range" min="28" max="82" value="54">
+        </label>
+        <label>
+          <span>书写时间 <output id="duration-output">3.2 秒</output></span>
+          <input id="duration-input" type="range" min="1200" max="7000" step="100" value="3200">
+        </label>
+        <label>
+          <span>对齐方式</span>
+          <select id="align-input">
+            <option value="left">左对齐</option>
+            <option value="center" selected>居中</option>
+            <option value="right">右对齐</option>
+          </select>
+        </label>
+        <div class="actions wide">
+          <button type="submit" class="primary">生成动画</button>
+          <button type="button" id="replay-button">重新播放</button>
+          <button type="button" id="export-button">导出 SVG</button>
+        </div>
+      </form>
+
+      <div class="preview-wrap">
+        <div class="tape tape-left"></div>
+        <div class="tape tape-right"></div>
+        <div id="preview" aria-label="手写动画预览"></div>
+        <p id="status" role="status">正在加载笔迹…</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/vara@1.4.1/lib/vara.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
