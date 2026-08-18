@@ -26,6 +26,8 @@ textarea { resize: vertical; line-height: 1.5; }
 input[type="color"] { width: 100%; height: 43px; border: 1px solid var(--line); padding: 4px; background: var(--paper); border-radius: 10px; }
 input[type="range"] { accent-color: var(--red); }
 small { color: #657089; line-height: 1.5; }
+.phrase-presets { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 2px; }
+.phrase-presets button { padding: 6px 10px; border-color: var(--line); font-size: 12px; }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; }
 button { border: 1px solid var(--navy); background: transparent; color: var(--navy); border-radius: 999px; padding: 10px 15px; }
 button.primary { background: var(--navy); color: white; }
