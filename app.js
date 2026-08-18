@@ -56,6 +56,13 @@ document.querySelector('#controls').addEventListener('submit', event => {
   generate();
 });
 
+document.querySelectorAll('[data-phrase]').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelector('#text-input').value = button.dataset.phrase;
+    generate();
+  });
+});
+
 document.querySelector('#replay-button').addEventListener('click', () => {
   if (!currentVara) return generate();
   currentVara.draw('message');
